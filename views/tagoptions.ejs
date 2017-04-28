@@ -5,6 +5,16 @@
     <title></title>
   </head>
   <body>
-    
+    <form action="#" method="post">
+      <select class="" name="">
+        <%for (let i = 0; i<tags.length; i++){%>
+          <option value="<%=tags[i].name%>"><%=tags[i].name%></option>
+          <%}%>
+      </select><br>
+      <button type="submit">submit</button>
+    </form>
+    <form class="" action="/users/logout/<%=username%>">
+      <button type="submit">logout</button>
+    </form>
   </body>
 </html>

@@ -8,7 +8,7 @@ router.get('/signup', function(req, res, next) {
 });
 
 router.post('/signup',controller.signup);
-
 router.post('/login', passport.authenticate('local', { session: false }),controller.createToken);
+router.get('/logout/:username', controller.logout);
 
 module.exports = router;

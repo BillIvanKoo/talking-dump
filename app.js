@@ -16,6 +16,7 @@ db.once('open', function() {
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var tags = require('./routes/tags');
 
 const passport = require('passport');
 var Strategy = require('passport-local').Strategy;
@@ -39,7 +40,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users)
+app.use('/users', users);
+app.use('/tags', tags);
 
 
 // catch 404 and forward to error handler
