@@ -7,16 +7,16 @@
   </head>
   <body>
     <div class="title">Please choose a category</div>
-    <form action="#" method="post">
-      <select class="" name="">
+    <form action="/tags/<%=username%>" method="post">
+      <select name="tags">
         <%for (let i = 0; i<tags.length; i++){%>
           <option value="<%=tags[i].name%>"><%=tags[i].name%></option>
           <%}%>
       </select><br>
-      <button type="submit">submit</button>
+      <button type="submit">Submit</button>
     </form>
     <form class="" action="/users/logout/<%=username%>">
-      <button type="submit">logout</button>
+      <button type="submit">Logout</button>
     </form>
   </body>
 </html>

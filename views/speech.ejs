@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='/stylesheets/speech.css' />
+    <title></title>
+  </head>
+  <body>
+    <p><%= quote %></p>
+	<audio autoplay>
+    <source src=<%= url %> type="audio/mpeg">
+	</audio>
+  <form action="/tags/<%=username%>">
+    <button type="submit">Back</button>
+  </form>
+  </body>
+</html>
