@@ -10,7 +10,7 @@ const bcrypt = require('bcrypt');
 let passportAuth = (username, password, next) => {
   let findUser = User.findOne({username: username}, (err, user) => {
     if (err || user === null) {
-      next(null, {message: 'username is not found'});
+      next(null, false, {message: 'username is not found'});
     } else {
       bcrypt.compare(password, user.password, (err, res) => {
         if (err) {
@@ -19,7 +19,7 @@ let passportAuth = (username, password, next) => {
           if (res) {
             next(null, user);
           } else {
-            next(null, {message: 'password is incorrect'});
+            next(null, false, {message: 'password is incorrect'});
           }
         }
       });

@@ -1,0 +1,16 @@
+body {
+  padding: 50px;
+  font: 50px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url(http://static6.businessinsider.com/image/55918b77ecad04a3465a0a63/nbc-fires-donald-trump-after-he-calls-mexicans-rapists-and-drug-runners.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100%;
+  background-attachment: fixed;
+}
+.title {
+  font: 64px "Lucida Grande";
+  color: White;
+  background: black;
+  opacity: 0.7
+}
