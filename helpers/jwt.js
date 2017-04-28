@@ -7,9 +7,14 @@ let jwtAuthenticate = function(req, res, next){
   Token.find().then((tokens)=>{
     for(let i = 0; i<tokens.length; i++){
       jwt.verify(tokens[i].token, 'secret', function(err,decoded){
-        if(broughtUsername===decoded.username){
-          arr.push(broughtUsername)
-          console.log(arr)
+        if(err){
+          Token.find({token: tokens[i].token}).remove().exec()
+        }
+        if(!err){
+          if(broughtUsername===decoded.username){
+            arr.push(broughtUsername)
+            console.log(arr)
+          }  
         }
       })
     }
