@@ -13,7 +13,10 @@ let key = '1722fb629c05437e825bd982850dbd12';
 // USE VOICE RSS API
 
 let textSpeech = (req, res)=>{
-  let str = req.body.tags; //"search" diganti sesuai name di body
+  let str = req.body.tags;
+  if(str==="Ivanka Trump"){
+    str="Ivanka";
+  }
   let string = str.replace(/\s/g,"%20")
   let url = 'https://api.tronalddump.io/search/quote?query='+string;
   axios.get(url)
@@ -23,7 +26,7 @@ let textSpeech = (req, res)=>{
     var quote = quotes[random].value;
     var quoteToSpeach = quote.replace(/\s/g,"%20")
 
-    let urlRSS = 'http://api.voicerss.org/?key='+key+'&hl=en-us&src='+quoteToSpeach;
+    let urlRSS = 'http://api.voicerss.org/?key='+key+'&hl=en-gb&src='+quoteToSpeach;
     res.render('speech', {quote : quote, url : urlRSS, username: req.params.username});
   })
 }
